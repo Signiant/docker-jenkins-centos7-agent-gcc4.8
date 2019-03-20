@@ -23,7 +23,6 @@ RUN yum install -y -q `cat /tmp/yum.packages.list`
 
 # Install c/c++ development tools
 RUN yum -y install gcc
-RUN gcc –version
 RUN yum -y install gcc-c++
 
 #install cmake
