@@ -22,14 +22,9 @@ RUN chmod +r /tmp/yum.packages.list
 RUN yum install -y -q `cat /tmp/yum.packages.list`
 
 # Install c/c++ development tools
-RUN yum install -y centos-release-scl 
-RUN yum install -y devtoolset-2
-RUN scl enable devtoolset-2 bash
-RUN printf "\nsource scl_source enable devtoolset-2\n" >> /root/.bashrc
-RUN printf "\nsource scl_source enable devtoolset-2\n" >> /home/$BUILD_USER/.bashrc
-
-#check gcc version
+RUN yum -y install gcc
 RUN gcc –version
+RUN yum -y install gcc-c++
 
 #install cmake
 RUN mv /usr/bin/cmake /usr/bin/cmake2
