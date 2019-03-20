@@ -21,6 +21,10 @@ COPY yum-packages.list /tmp/yum.packages.list
 RUN chmod +r /tmp/yum.packages.list
 RUN yum install -y -q `cat /tmp/yum.packages.list`
 
+#check gcc version
+RUN gcc –version
+
+#install cmake
 RUN mv /usr/bin/cmake /usr/bin/cmake2
 RUN mv /usr/bin/ccmake /usr/bin/ccmake2
 RUN wget https://cmake.org/files/v3.12/cmake-3.12.0-Linux-x86_64.tar.gz -O /tmp/cmake-3.12.0-Linux-x86_64.tar.gz
