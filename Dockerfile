@@ -48,11 +48,11 @@ RUN gem install rb-inotify -v 0.9.10
 RUN gem install compass
 
 # Install the latest version of git
+#https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz
 RUN cd /tmp && \
-    wget https://github.com/git/git/archive/v2.7.0.tar.gz && \
-    tar xvfz ./v2.7.0.tar.gz && \
-    cd git-2.7.0 && \
-    make configure && \
+    wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.gz && \
+    tar xvfz ./git-2.9.5.tar.gz && \
+    cd git-2.9.5 && \
     ./configure --prefix=/usr && \
     make && \
     make install
